@@ -8,9 +8,12 @@ This project depend on the netty-servlet-bridge - An open source project for imp
 - How to run demo : 
 
 	 -  Start a httpserver : 
+		
 		mvn exec:java -Dexec.mainClass=example.netty.TestHttpServerAndServletHandler
 
 	 -  In another terminal console ,run test (send a http request to servlet hosted in server) : 
+
 		mvn test
+		
 	 -  Check response from test result (print out to console)
 
