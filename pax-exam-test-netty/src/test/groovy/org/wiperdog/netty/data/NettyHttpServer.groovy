@@ -24,52 +24,70 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class NettyHttpServer {
-
+	ClassLoader loader ;
+	ServerBootstrap bootstrap;
+	ServletBridgeChannelPipelineFactory servletBridge;
+	Channel serverChannel;
 	private static final Logger log = LoggerFactory
-			.getLogger(NettyHttpServer.class);
-
-	public static void startServer() throws CompilationFailedException, IOException {
+	.getLogger(NettyHttpServer.class);
+	public NettyHttpServer(ClassLoader loader){
+		this.loader = loader;
+	}
+	public void startServer(String servletDir) throws CompilationFailedException, IOException {
 		int port = 8080;
-		
+
 		// Path to folder contains servlet
-        File dirServlet = new File("/org/wiperdog/netty/data/servlet/");
-        
+		File dirServlet = new File(servletDir);
+		File[] listAllServlet = dirServlet.listFiles();
+
 		long start = System.currentTimeMillis();
 
 		// Configure the server.
-		final ServerBootstrap bootstrap = new ServerBootstrap(
+		bootstrap = new ServerBootstrap(
 				new NioServerSocketChannelFactory(
-						Executors.newCachedThreadPool(),
-						Executors.newCachedThreadPool()));
+				Executors.newCachedThreadPool(),
+				Executors.newCachedThreadPool()));
 
 		// Registering servlet in servlet container
 		WebappConfiguration webapp = new WebappConfiguration();
 		if (dirServlet.exists()) {
 			dirServlet.eachFileRecurse(FileType.FILES) { file ->
-				def servletClass = new GroovyClassLoader().parseClass(new File(file.getAbsolutePath()))
-				webapp.addServletConfigurations(new ServletConfiguration(servletClass, "/" + servletClass.getSimpleName() + "/*"));
+				if(file.name.endsWith(".groovy")){
+					def groovyClassLoader = new GroovyClassLoader(this.loader)
+					def servletClazz;
+					try{
+						servletClazz = groovyClassLoader.parseClass(new File(file.getAbsolutePath()))
+					}catch(Exception ex) {
+						println "Failed to load servlet from file : " + file
+						ex.printStackTrace();
+					}
+					if(servletClazz != null){
+						webapp.addServletConfigurations(new ServletConfiguration(servletClazz, "/" + servletClazz.getSimpleName() + "/"));
+					}
+				}
 			}
+		}else{
+			println "Servlet folder not found :  " + dirServlet.getAbsolutePath()
+			
 		}
-		
+
 		// Set up the event pipeline factory.
-		final ServletBridgeChannelPipelineFactory servletBridge = new ServletBridgeChannelPipelineFactory(
+		servletBridge = new ServletBridgeChannelPipelineFactory(
 				webapp);
 		bootstrap.setPipelineFactory(servletBridge);
 
 		// Bind and start to accept incoming connections.
-		final Channel serverChannel = bootstrap
+		serverChannel = bootstrap
 				.bind(new InetSocketAddress(port));
 
 		long end = System.currentTimeMillis();
 		log.info(">>> Server started in {} ms .... <<< ", (end - start));
-
-		Runtime.getRuntime().addShutdownHook(new Thread() {
-			@Override
-			public void run() {
-				servletBridge.shutdown();
-				serverChannel.close().awaitUninterruptibly();
-				bootstrap.releaseExternalResources();
-			}
-		});
+	}
+	public void stopServer(){
+		if(servletBridge != null) {
+			servletBridge.shutdown();
+			serverChannel.close().awaitUninterruptibly();
+			bootstrap.releaseExternalResources();
+		}
 	}
 }
