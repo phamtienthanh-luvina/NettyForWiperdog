@@ -1,4 +1,0 @@
-This project use for test Wiperdog's logs monitoring functions
- Usage : 
-     - Build org.wiperdog.logstat (This bundle depends on 3 bundle : org.wiperdog.directorywatcher , jruby-complete)
-     - Run command "mvn clean test" in project directory to test
