@@ -424,7 +424,6 @@ public class TestNetty {
 		while ((line = bf.readLine()) != null) {
 			result += line + "\n";
 		}
-		println result
 		return result
 	}
 
