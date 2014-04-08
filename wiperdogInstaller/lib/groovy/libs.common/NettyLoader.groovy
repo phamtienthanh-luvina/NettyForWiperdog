@@ -1,4 +1,3 @@
-package org.wiperdog.netty.test
 import java.net.InetSocketAddress;
 import java.util.Collection;
 import java.util.Iterator;
