@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/xwiki/bin/view/WiperDog/processPolicy/" />
+<title>PolicyServlet</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">PolicyServlet</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=listJob</td>
+	<td>MySQL.Database_Area.Top30Database</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=istIid_MySQL_Database_Area_Top30Database</td>
+	<td>localhost-@MYSQL-information_schema</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=selectBoxId</td>
+	<td>M</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=radioMedium</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputText</td>
+	<td>UsedDataSize &gt; 1000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=messageText</td>
+	<td>Show this message is ok</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=addButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#msgValidate &gt; b</td>
+	<td>Policy was added !!!</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=previewFileButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=runTestButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveFileButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#msgValidateForSaveFile &gt; b</td>
+	<td>Process policy file successfully !!!</td>
+</tr>
+</tbody></table>
+</body>
+</html>

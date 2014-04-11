@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/xwiki/bin/view/WiperDog/JobConfiguration/" />
+<title>JobDeclaredServlet</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">JobDeclaredServlet</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=dbTypeCbb</td>
+	<td>Postgres</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=jobNameText</td>
+	<td>TestJob.Selenium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=jobFileNameText</td>
+	<td>TestJob.Selenium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=jobClassNameText</td>
+	<td>CLASS_A</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=commentForJobText</td>
+	<td>Comment for TestJob.Selenium</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=listActionJob</td>
+	<td>Run FetchAction</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=fetchactionText</td>
+	<td>return &quot;Result data from TestJob.Selenium&quot;</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=listSendType</td>
+	<td>Store</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hide</td>
+	<td>Show KEYEXPR Form</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rootText</td>
+	<td>[&quot;DatabaseName&quot;,&quot;FileId&quot;]</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sequenceText</td>
+	<td>[&quot;AverageIOTimeDbl&quot;,&quot;AverageIOTimeCumDbl&quot;]</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=unitText</td>
+	<td>[&quot;UsedDataSize&quot; : &quot;byte&quot; , &quot;UsedSize&quot;:&quot;byte&quot;]</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=listChartType</td>
+	<td>line</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=nameChartText</td>
+	<td>ChartName of TestJob.Selenium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=chartColumnsText</td>
+	<td>[&quot;UsedDataSize&quot;, &quot;UsedSize&quot;]</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=hintColumnsText</td>
+	<td>[&quot;UsedCount&quot;, &quot;UsedSize&quot;]</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=updateChartInfo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=updateJobInfo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=b</td>
+	<td>Finish process successfully</td>
+</tr>
+</tbody></table>
+</body>
+</html>
