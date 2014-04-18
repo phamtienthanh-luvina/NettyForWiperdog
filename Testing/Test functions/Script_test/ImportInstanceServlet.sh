@@ -1,10 +1,21 @@
 echo ">>>>> TEST GET METHOD OF IMPORT INSTANCE SERVLET <<<<<"
 content=$(curl -i -H "Accept: application/json" -H "Content-Type: application/json" 'http://localhost:13111/ImportInstanceServlet?action=getListJob')
+echo "Result response data after GET request:"
+echo "--------------------------------------------"
+echo $content 
+echo "--------------------------------------------"
+echo "Check OK if content contains string : [data] and [status]"
 if [[ $content =~ .*'"data"'.*'"status"'.* ]]
 then
 	echo "[MESSAGE TEST] GET IS OK"
 	echo ">>>>> TEST POST METHOD OF IMPORT INSTANCE SERVLET <<<<<"
 	contentPost=$(curl -X POST -H "Accept: application/json" -H "Content-type: application/json" -d '[{"INST_NAME":"inst_1","SCHEDULE":"10i","PARAMS":{"PARAM3":"val_par31","PARAM1":"val_par11","PARAM2":"val_par21"}}]' 'http://localhost:13111/ImportInstanceServlet?action=exportCSV&jobFileName=MySQL.Database_Area.Top30Database.job' -v)
+	echo "Result response data after POST request:"
+	echo "--------------------------------------------"
+	echo $contentPost 
+	echo "--------------------------------------------"
+	echo "Check OK if content contains string : [status]"
+
 	if [[ $contentPost =~ .*'status'.* ]]
 	then
 		echo "[MESSAGE TEST] POST IS OK"

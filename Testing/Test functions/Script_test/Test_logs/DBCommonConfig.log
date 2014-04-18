@@ -1,0 +1,15 @@
+>>>>> TEST GET METHOD OF DBCOMMONCONFIG SERVLET <<<<<
+Result response data after GET request:
+--------------------------------------------
+HTTP/1.1 200 OK Content-Type: json Access-Control-Allow-Origin: * Content-Length: 938 Connection: keep-alive  [ "MySQL.Performance.MyISAMKeyBuffer", "MySQL.Database_Area.Top30Database", "MySQL.Database_Structure.DatabaseVersion", "MySQL.Performance.QueryCache", "MySQL.Proactive_Check.Thread", "MySQL.Proactive_Check.Resource_Limit", "MySQL.Performance.InnoDBIOStatus", "MySQL.Performance.InnoDBLogBuffer", "MySQL.Proactive_Check.SQLExecutions", "MySQL.Proactive_Check.Aborted_Information", "MySQL.Database_Structure.Parameter", "MySQL.Performance.Network_Traffic", "MySQL.Performance.InnoDBBufferPool", "MySQL.Database_Area.InnoDBTablespace_Free", "MySQL.Performance.Sorts" ] { "params": { "dbSid": "a", "dbHostId": "a" }, "instances": { "inst_1": { "schedule": "60i", "params": { "dbSid": "b", "dbHostId": "b" } } }, "jobName": "MySQL.Database_Area.Top30Database" }
+--------------------------------------------
+Check OK if content contains string : [jobName: MySQL.Database_Area.Top30Database]
+[MESSAGE TEST] GET IS OK
+>>>>> TEST POST METHOD OF DBCOMMONCONFIG SERVLET <<<<<
+Result response data after POST request:
+--------------------------------------------
+{ "status": "OK" }
+--------------------------------------------
+Check OK if content contains string : [OK]
+[MESSAGE TEST] POST IS OK
+*NOTE: CHECK IN FOLDER VAR/JOB: MySQL.Database_Area.Top30Database.instances AND MySQL.Database_Area.Top30Database.params WERE CREATED !!!
