@@ -4,13 +4,15 @@ This test about Netty functions and Netty performance on wiperdog
 
 
 Test fucntions :
-    Selenium_test 
-      + Using Selenium IDE (http://docs.seleniumhq.org/) to test the functions of Netty + servlet handler in wiperdog 
 
-         Refer to TestFunctions_Report.xlsx for reproceduce the test functions  & report
 
-    Script_test:
-      + Using Curl to test servlet's functions
+Selenium_test :
++ Using Selenium IDE (http://docs.seleniumhq.org/) to test the functions of Netty + servlet handler in wiperdog
+
+ (Refer to TestFunctions_Report.xlsx for reproceduce the test functions  & report)
+        
+Script_test:
++ Using Curl to test servlet's functions
 
 Test performance : 
 
