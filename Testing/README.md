@@ -3,10 +3,7 @@ The testing for wiperdog installer with Netty implement
 This test about Netty functions and Netty performance on wiperdog 
 
 
-Test fucntions :
-
-
-Selenium_test :
+Test fucntions : We used two methods as the following
 + Using Selenium IDE (http://docs.seleniumhq.org/) to test the functions of Netty + servlet handler in wiperdog
 
  (Refer to TestFunctions_Report.xlsx for reproceduce the test functions  & report)
