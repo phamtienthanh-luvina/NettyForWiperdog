@@ -1,11 +1,0 @@
->>>>> TEST GET METHOD OF DESTEST SERVLET <<<<<
-Result response data after GET request:
---------------------------------------------
-HTTP/1.1 200 OK Content-Type: text/html Content-Length: 33 Connection: keep-alive  Put to insert data in MongoDB!!!
---------------------------------------------
-Check OK if content contains string : [Put to insert data in MongoDB!!!]
-[MESSAGE TEST] GET IS OK
->>>>> TEST PUT METHOD OF DESTEST SERVLET <<<<<
-[MESSAGE TEST] PLEASE CHECK DATA IN MONGODB TO VIEW RESULT:
- - If collection abc.def has new row: PUT IS OK
- - Else: PUT IS FAILURE

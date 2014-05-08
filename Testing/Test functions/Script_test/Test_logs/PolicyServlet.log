@@ -1,15 +1,0 @@
->>>>> TEST GET METHOD OF POLICY SERVLET <<<<<
-Result response data after GET request:
---------------------------------------------
-HTTP/1.1 200 OK Content-Type: json Access-Control-Allow-Origin: * Content-Length: 35 Connection: keep-alive  { "POLICY": { } }
---------------------------------------------
-Check OK if content contains [POLICY] string
-[MESSAGE TEST] GET IS OK
->>>>> TEST POST METHOD OF POLICY SERVLET <<<<<
-Result response data after POST request:
---------------------------------------------
-{"status":"OK","message":"Process policy file successfully !!!"}
---------------------------------------------
-Check OK if content contains [status] string
-[MESSAGE TEST] POST IS OK
-*NOTE: CHECK IN FOLDER VAR/JOB/POLICY: Postgres.Database_Area.Tablespace_Free.localhost-@PGSQL-postgres.policy WAS CREATED !!!

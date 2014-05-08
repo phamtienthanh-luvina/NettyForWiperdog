@@ -1,15 +1,0 @@
->>>>> TEST GET METHOD OF JOB DECLARED SERVLET <<<<<
-Result response data after GET request:
---------------------------------------------
-HTTP/1.1 200 OK Content-Type: json Access-Control-Allow-Origin: * Content-Length: 465 Connection: keep-alive  [ "Postgres.Proactive_Check.Session", "Postgres.Database_Structure.Parameters", "Postgres.Performance.Buffer_Cache_Usage", "Postgres.Performance.Buffer_Cache_Hit", "Postgres.Database_Statistic.Database_Info", "Postgres.Performance.Datafile_IO_Info", "Postgres.Proactive_Check.Resource_Limit", "Postgres.Database_Structure.Database_Version", "Postgres.Proactive_Check.Transactions", "Postgres.Database_Area.Tablespace_Free" ]
---------------------------------------------
-Check OK if content contains string : [Postgres.Database_Area.Tablespace_Free]
-[MESSAGE TEST] GET IS OK
->>>>> TEST POST METHOD OF JOB DECLARED SERVLET <<<<<
-Result response data after POST request:
---------------------------------------------
-{"status":"OK","message":"Finish process successfully"}
---------------------------------------------
-Check OK if content contains string : [status]
-[MESSAGE TEST] POST IS OK
-*NOTE: CHECK IN FOLDER VAR/JOB: Curl.ShellScript.job WAS CREATED !!!

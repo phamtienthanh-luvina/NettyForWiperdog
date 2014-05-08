@@ -1,15 +1,0 @@
->>>>> TEST GET METHOD OF DBCONFIGURATION SERVLET <<<<<
-Result response data after GET request:
---------------------------------------------
-HTTP/1.1 200 OK Content-Type: json Access-Control-Allow-Origin: * Content-Length: 975 Connection: keep-alive  {"@MYSQL":{"dbSid":"information_schema","dbconnstr":"jdbc:mysql://localhost:3306/information_schema","user":"root","dbHostId":"localhost"},"@MSSQL-MSSQLSERVER2008":{"dbSid":"MSSQLSERVER2008","dbconnstr":"jdbc:sqlserver://localhost:1433","user":"sa","dbHostId":"localhost"},"localhost-@MYSQL-information_schema":{"dbSid":"information_schema","dbconnstr":"jdbc:mysql://localhost:3306/information_schema","user":"root","dbHostId":"localhost"},"curlHostID-@PGSQL-curlSid":{"dbSid":"curlSid","dbconnstr":"jdbc:postgresql://curlHostName:5432","user":"curlUserName","dbHostId":"curlHostID"},"@MSSQL":{"dbSid":"MSSQLSERVER2008","dbconnstr":"jdbc:sqlserver://localhost:1433","user":"sa","dbHostId":"localhost"},"@PGSQL":{"dbSid":"postgres","dbconnstr":"jdbc:postgresql://localhost:5432/postgres","user":"postgres","dbHostId":"localhost"},"localhost-@PGSQL-postgres":{"dbSid":"postgres","dbconnstr":"jdbc:postgresql://localhost:5432/postgres","user":"postgres","dbHostId":"localhost"}}
---------------------------------------------
-Check OK if content contains string : [jdbc:mysql://localhost:3306/information_schema]
-[MESSAGE TEST] GET IS OK
->>>>> TEST POST METHOD OF DBCONFIGURATION SERVLET <<<<<
-Result response data after POST request:
---------------------------------------------
-{ "status": "success" }
---------------------------------------------
-Check OK if content contains string : [status]
-[MESSAGE TEST] POST IS OK
-*NOTE: CHECK CONTENT OF FILE var/conf/default.params FOR SURE
